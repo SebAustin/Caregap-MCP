@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="caregap-mcp-thumbnail.png" alt="CareGap MCP — AI-Powered Care Gap Detection" width="700" />
+</p>
+
 # CareGap MCP
 
 **AI-powered quality measure gap identification and closure, delivered as a SHARP-on-MCP server that plugs into any FHIR-connected healthcare AI agent.**
@@ -52,6 +56,10 @@ curl -X POST http://localhost:3333/mcp \
 
 ## Tools (MCP Superpowers)
 
+<p align="center">
+  <img src="caregap-tools-workflow.png" alt="7 Tools. One Workflow. Full Gap Closure." width="700" />
+</p>
+
 | Tool | Description | LLM? |
 |------|-------------|------|
 | `get_measure_specification` | Returns full HEDIS/CMS spec for a measure — denominator, numerator, exclusions, value sets with OIDs | No |
@@ -77,6 +85,10 @@ curl -X POST http://localhost:3333/mcp \
 ---
 
 ## Synthetic Patients
+
+<p align="center">
+  <img src="caregap-patient-analysis.png" alt="Patient Gap Analysis — Maria G." width="700" />
+</p>
 
 | ID | Name | Profile | Demonstrates |
 |----|------|---------|-------------|
@@ -111,6 +123,10 @@ This server implements the [SHARP-on-MCP specification](https://sharponmcp.com) 
 ---
 
 ## Impact
+
+<p align="center">
+  <img src="caregap-value-proposition.png" alt="Closing the Last-Mile Quality Gap" width="700" />
+</p>
 
 Quality measures drive billions in value-based payments across U.S. healthcare:
 
