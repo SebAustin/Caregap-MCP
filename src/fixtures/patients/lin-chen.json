@@ -1,0 +1,123 @@
+{
+  "resourceType": "Bundle",
+  "id": "synth-lin-chen",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-lin-003",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-lin-003",
+        "name": [{ "use": "official", "family": "Chen", "given": ["Lin"] }],
+        "gender": "female",
+        "birthDate": "1980-07-08",
+        "address": [{ "city": "San Francisco", "state": "CA", "postalCode": "94103" }],
+        "telecom": [
+          { "system": "phone", "value": "555-0303", "use": "mobile" },
+          { "system": "email", "value": "lin.chen@example.com" }
+        ],
+        "communication": [
+          { "language": { "coding": [{ "system": "urn:ietf:bcp:47", "code": "es" }] }, "preferred": true },
+          { "language": { "coding": [{ "system": "urn:ietf:bcp:47", "code": "en" }] } }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-lin-pregnancy",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-lin-pregnancy",
+        "subject": { "reference": "Patient/patient-lin-003" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "77386006", "display": "Pregnant" }],
+          "text": "Pregnancy"
+        },
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" }] },
+        "verificationStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status", "code": "confirmed" }] },
+        "onsetDateTime": "2025-10-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-lin-htn",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-lin-htn",
+        "subject": { "reference": "Patient/patient-lin-003" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "38341003", "display": "Hypertensive disorder" }],
+          "text": "Essential Hypertension"
+        },
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" }] },
+        "verificationStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status", "code": "confirmed" }] },
+        "onsetDateTime": "2022-03-15",
+        "recordedDate": "2022-03-15"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-lin-dm2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-lin-dm2",
+        "subject": { "reference": "Patient/patient-lin-003" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "44054006", "display": "Diabetes mellitus type 2" }],
+          "text": "Type 2 Diabetes Mellitus"
+        },
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" }] },
+        "verificationStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status", "code": "confirmed" }] },
+        "onsetDateTime": "2021-11-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:obs-lin-bp",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-lin-bp",
+        "subject": { "reference": "Patient/patient-lin-003" },
+        "status": "final",
+        "code": {
+          "coding": [{ "system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel" }]
+        },
+        "effectiveDateTime": "2026-01-10",
+        "component": [
+          {
+            "code": { "coding": [{ "system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure" }] },
+            "valueQuantity": { "value": 155, "unit": "mmHg" }
+          },
+          {
+            "code": { "coding": [{ "system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure" }] },
+            "valueQuantity": { "value": 98, "unit": "mmHg" }
+          }
+        ],
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:obs-lin-hba1c",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-lin-hba1c",
+        "subject": { "reference": "Patient/patient-lin-003" },
+        "status": "final",
+        "code": {
+          "coding": [{ "system": "http://loinc.org", "code": "4548-4", "display": "Hemoglobin A1c/Hemoglobin.total in Blood" }]
+        },
+        "effectiveDateTime": "2024-12-01",
+        "valueQuantity": { "value": 9.1, "unit": "%", "system": "http://unitsofmeasure.org", "code": "%" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory" }] }]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:coverage-lin",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "coverage-lin",
+        "beneficiary": { "reference": "Patient/patient-lin-003" },
+        "status": "active",
+        "type": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode", "code": "HIP", "display": "health insurance plan policy" }] },
+        "period": { "start": "2024-01-01", "end": "2026-12-31" },
+        "payor": [{ "display": "Bay Area Health" }]
+      }
+    }
+  ]
+}

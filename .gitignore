@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+*.tsbuildinfo
+coverage/
+
+DEMO_SCRIPT.md
+DEPLOY.md
+MARKETPLACE_LISTING.md
+SUBMIT.md
+.DS_Store

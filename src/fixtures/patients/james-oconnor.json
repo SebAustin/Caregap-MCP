@@ -1,0 +1,103 @@
+{
+  "resourceType": "Bundle",
+  "id": "synth-james-oconnor",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-james-002",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-james-002",
+        "name": [{ "use": "official", "family": "O'Connor", "given": ["James"] }],
+        "gender": "male",
+        "birthDate": "1973-09-22",
+        "address": [{ "city": "Portland", "state": "OR", "postalCode": "97201" }],
+        "telecom": [
+          { "system": "phone", "value": "555-0202", "use": "mobile" }
+        ],
+        "communication": [
+          { "language": { "coding": [{ "system": "urn:ietf:bcp:47", "code": "en" }] }, "preferred": true }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-james-colonoscopy",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-james-colonoscopy",
+        "subject": { "reference": "Patient/patient-james-002" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "73761001", "display": "Colonoscopy" }],
+          "text": "Colonoscopy"
+        },
+        "status": "completed",
+        "performedDateTime": "2017-04-15"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-james-hospice",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-james-colon-polyps",
+        "subject": { "reference": "Patient/patient-james-002" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "68496003", "display": "Polyp of colon" }],
+          "text": "History of colon polyps"
+        },
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "resolved" }] },
+        "verificationStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status", "code": "confirmed" }] },
+        "onsetDateTime": "2017-04-15"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:docref-james-hospice",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "docref-james-hospice",
+        "subject": { "reference": "Patient/patient-james-002" },
+        "status": "current",
+        "type": {
+          "coding": [{ "system": "http://loinc.org", "code": "18842-5", "display": "Discharge summary" }]
+        },
+        "date": "2025-11-01",
+        "description": "Hospice enrollment documentation",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "UGF0aWVudCBlbnJvbGxlZCBpbiBob3NwaWNlIGNhcmUgYXMgb2YgTm92ZW1iZXIgMSwgMjAyNS4gRGlhZ25vc2lzOiBtZXRhc3RhdGljIHBhbmNyZWF0aWMgY2FuY2VyLiBQcm9nbm9zaXM6IGxlc3MgdGhhbiA2IG1vbnRocy4gUGF0aWVudCBhbmQgZmFtaWx5IGhhdmUgY2hvc2VuIGNvbWZvcnQtZm9jdXNlZCBjYXJlLg=="
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-james-cancer",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-james-cancer",
+        "subject": { "reference": "Patient/patient-james-002" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "363418001", "display": "Malignant tumor of pancreas" }],
+          "text": "Metastatic pancreatic cancer"
+        },
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" }] },
+        "verificationStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status", "code": "confirmed" }] },
+        "onsetDateTime": "2025-08-01",
+        "recordedDate": "2025-08-15"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:coverage-james",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "coverage-james",
+        "beneficiary": { "reference": "Patient/patient-james-002" },
+        "status": "active",
+        "type": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode", "code": "HIP", "display": "health insurance plan policy" }] },
+        "period": { "start": "2024-01-01", "end": "2026-12-31" },
+        "payor": [{ "display": "Pacific Health Plan" }]
+      }
+    }
+  ]
+}

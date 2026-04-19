@@ -1,0 +1,29 @@
+# fly.toml app configuration file generated for caregap-mcp on 2026-04-19T09:57:19-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'caregap-mcp'
+primary_region = 'ord'
+
+[build]
+
+[env]
+  DRY_RUN = 'true'
+  LOG_LEVEL = 'info'
+  MCP_API_KEYS = ''
+  MCP_MODE = 'fixture'
+  PORT = '3333'
+
+[http_service]
+  internal_port = 3333
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 256

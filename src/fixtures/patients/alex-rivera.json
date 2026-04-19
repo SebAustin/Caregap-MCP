@@ -1,0 +1,65 @@
+{
+  "resourceType": "Bundle",
+  "id": "synth-alex-rivera",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-alex-004",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-alex-004",
+        "name": [{ "use": "official", "family": "Rivera", "given": ["Alex"] }],
+        "gender": "other",
+        "birthDate": "2010-02-28",
+        "address": [{ "city": "Chicago", "state": "IL", "postalCode": "60614" }],
+        "telecom": [
+          { "system": "phone", "value": "555-0404", "use": "home" }
+        ],
+        "communication": [
+          { "language": { "coding": [{ "system": "urn:ietf:bcp:47", "code": "tl" }] }, "preferred": true },
+          { "language": { "coding": [{ "system": "urn:ietf:bcp:47", "code": "en" }] } }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:imm-alex-tdap",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "imm-alex-tdap",
+        "patient": { "reference": "Patient/patient-alex-004" },
+        "vaccineCode": {
+          "coding": [{ "system": "http://hl7.org/fhir/sid/cvx", "code": "115", "display": "Tdap" }],
+          "text": "Tdap vaccine"
+        },
+        "status": "completed",
+        "occurrenceDateTime": "2021-03-15"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:imm-alex-menacwy",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "imm-alex-menacwy",
+        "patient": { "reference": "Patient/patient-alex-004" },
+        "vaccineCode": {
+          "coding": [{ "system": "http://hl7.org/fhir/sid/cvx", "code": "114", "display": "Meningococcal MCV4P" }],
+          "text": "Meningococcal conjugate vaccine (MenACWY)"
+        },
+        "status": "completed",
+        "occurrenceDateTime": "2021-03-15"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:coverage-alex",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "coverage-alex",
+        "beneficiary": { "reference": "Patient/patient-alex-004" },
+        "status": "active",
+        "type": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode", "code": "HIP", "display": "health insurance plan policy" }] },
+        "period": { "start": "2020-01-01", "end": "2026-12-31" },
+        "payor": [{ "display": "Midwest Family Health" }]
+      }
+    }
+  ]
+}
